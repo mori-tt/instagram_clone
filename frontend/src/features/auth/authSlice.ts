@@ -53,6 +53,7 @@ export const fetchAsyncUpdateProf = createAsyncThunk(
       uploadData,
       {
         headers: {
+          // 下記をコメントアウトするとうまく動く
           "Content-Type": "application/json",
           Authorization: `JWT ${localStorage.localJWT}`,
         },

@@ -25,6 +25,7 @@ export const fetchAsyncNewPost = createAsyncThunk(
     newPost.img && uploadData.append("img", newPost.img, newPost.img.name);
     const res = await axios.post(apiUrlPost, uploadData, {
       headers: {
+        // 下記をコメントアウトするとうまく動く
         "Content-Type": "application/json",
         Authorization: `JWT ${localStorage.localJWT}`,
       },
@@ -54,6 +55,7 @@ export const fetchAsyncPatchLiked = createAsyncThunk(
       uploadData.append("title", liked.title);
       const res = await axios.put(`${apiUrlPost}${liked.id}/`, uploadData, {
         headers: {
+          // 下記をコメントアウトするとうまく動く
           "Content-Type": "application/json",
           Authorization: `JWT ${localStorage.localJWT}`,
         },
@@ -62,6 +64,7 @@ export const fetchAsyncPatchLiked = createAsyncThunk(
     }
     const res = await axios.patch(`${apiUrlPost}${liked.id}/`, uploadData, {
       headers: {
+        // 下記をコメントアウトするとうまく動く
         "Content-Type": "application/json",
         Authorization: `JWT ${localStorage.localJWT}`,
       },
